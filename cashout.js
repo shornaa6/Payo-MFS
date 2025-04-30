@@ -9,6 +9,10 @@ document.getElementById('btn-cash-out')
     console.log(pinNUmber, cashoutAmount);
 
     if (pinNUmber === '1234'){
+        if (cashOutNbr > balanceNumber) {
+            alert('Insufficient balance. You cannot cash out more than your available balance.');
+            return; // Stop execution
+        }
         const accountBalances = document.getElementById('account-balance').innerText;
         const balanceNumber = parseFloat(accountBalances);
         const newBalances = balanceNumber - cashOutNbr;
