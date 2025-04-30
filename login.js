@@ -25,3 +25,20 @@ if (phoneNUmber === "5" || Pinnumber === "1234") {
     alert("invalid phone number or pin number");
   }
 })
+
+
+document.getElementById('button-login').addEventListener('click', function(event) {
+  event.preventDefault(); // prevent form reload
+
+  // Get user inputs
+  const phone = document.getElementById('phone-number').value;
+  const pin = document.getElementById('pin-number').value;
+
+  // Simple login check (for demo)
+  if (phone && pin === '1234') {
+      // Open home.html in a new tab
+      window.open('home.html', '_blank');
+  } else {
+      alert('Invalid phone number or PIN');
+  }
+});
